@@ -1,0 +1,26 @@
+.add-todo-button{
+    position: relative;
+    left: 20px;
+    top: 6px;
+    float: left;
+}
+
+.add-todo-button button{
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-style: none;
+    border-radius: 22px;
+    background-color: blue;
+    box-shadow: 0 0 10px 0px #888;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-todo-button button:focus{
+    outline: none;
+}
+
+.add-todo-button button:active{
+    border: 1px inset;
+}

@@ -1,0 +1,22 @@
+.main-content{
+    position: fixed;
+    left: 240px;
+    right: 0px;
+    top:53px;
+    bottom: 0;
+    padding: 10px;
+    overflow: scroll;
+    -webkit-transition: left 300ms; /* Safari */
+    transition: left 300ms linear;
+}
+.full-width{
+    left: 0;
+    -webkit-transition: left 300ms; /* Safari */
+    transition: left 300ms linear;
+}
+.list-name{
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    padding: 20px;
+}
