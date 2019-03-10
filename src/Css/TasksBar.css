@@ -1,0 +1,17 @@
+.tasks-bar{
+    width: inherit;
+    position: relative;
+}
+.tasks-time-title{
+    width: inherit;
+    position: relative;
+    font-size: 24px;
+    padding: 12px;
+    margin:10px;
+    font-weight: bold;
+}
+
+.tasks-time-title:hover{
+    cursor: pointer;
+    color:blue;
+}

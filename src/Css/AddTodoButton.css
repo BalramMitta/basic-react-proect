@@ -5,22 +5,30 @@
     float: left;
 }
 
-.add-todo-button button{
-    padding: 12px;
+.add-todo-button .add-button{
+    padding: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
     font-size: 14px;
     font-weight: 600;
     border-style: none;
     border-radius: 22px;
     background-color: blue;
-    box-shadow: 0 0 10px 0px #888;
     color: #fff;
     cursor: pointer;
+    box-shadow: 0 0 5px 0px #888;
 }
 
-.add-todo-button button:focus{
-    outline: none;
+.add-todo-button .add-button:hover{
+    background-color: blue;
+    box-shadow: 0 0 10px 0px #888;
 }
 
-.add-todo-button button:active{
-    border: 1px inset;
+.close{
+    font-size: 24px;
+    color: #aaa;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
 }

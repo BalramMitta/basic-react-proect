@@ -5,11 +5,12 @@ import '../Css/MenuBar.css';
 class MenuBar extends Component {
     render() {
 
-        var props=this.props;
+        let noIndex = -1;
+        let props=this.props;
         return (
             <div className={this.props.open === true ? 'sidebar open' : 'sidebar close'}>
                 <MenuItem head>My Lists</MenuItem>
-                <MenuItem changeList={props.changeList} index={-1}>All Tasks</MenuItem>
+                <MenuItem changeList={props.changeList} index={noIndex}>All Tasks</MenuItem>
 
                 {this.props.lists.map(function (data, index) {
                         return (

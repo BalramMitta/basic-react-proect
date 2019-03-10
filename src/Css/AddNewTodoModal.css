@@ -1,0 +1,20 @@
+.add-new-todo{
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.add-new-todo-dialogue{
+	margin: auto;
+	margin-top: 120px;
+	width: 500px;
+	height: 400px;
+	border-radius: 6px;
+	background-color: #fff;
+	box-sizing: content-box;
+	box-shadow: 0 0 52px 0 #888;
+}
