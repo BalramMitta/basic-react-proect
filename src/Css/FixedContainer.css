@@ -3,6 +3,7 @@
     width: 400px;
     height: 450px;
     background-color: #fff;
-    border-radius: 6px;
+    border-radius: 3px;
     float: left;
+    box-shadow: 0 0 10px 0 #aaa;
 }

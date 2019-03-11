@@ -13,22 +13,19 @@
 }
 
 .add-new-todo-dialogue{
-	margin: auto;
-	margin-top: 120px;
+	position: fixed;
+	top: 120px;
+	left: calc( 50% - 250px );
 	width: 500px;
-	height: 400px;
 	border-radius: 6px;
 	background-color: #fff;
 	box-sizing: content-box;
 	box-shadow: 0 0 52px 0 #888;
 }
-
-
-.close{
-    font-size: 24px;
-    color: #aaa;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
+.add-new-todo-dialogue div{
+	position: relative;
+	width: calc( 100% - 50px );
+	top:20px;
+	margin-top: 10px;
+	margin-left: 25px;
 }
