@@ -1,3 +1,7 @@
+.closed{
+	display: none;
+}
+
 .add-new-todo{
 	position: fixed;
 	top:0;
@@ -17,4 +21,14 @@
 	background-color: #fff;
 	box-sizing: content-box;
 	box-shadow: 0 0 52px 0 #888;
+}
+
+
+.close{
+    font-size: 24px;
+    color: #aaa;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
 }

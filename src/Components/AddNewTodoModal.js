@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import '../Css/AddNewTodoModal.css'
 
 class AddNewTodoModal extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-
-        }
-    }
     render() {
 
         return (
-            <div className="add-new-todo">
+            <div id="close-modal" className={this.props.isOpen?"add-new-todo":"closed"} onClick={this.props.closeModal}>
                <div className="add-new-todo-dialogue">
                </div>
             </div>

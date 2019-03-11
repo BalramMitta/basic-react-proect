@@ -6,33 +6,31 @@ class AddTodoButton extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+          isAddNewTodoModalOpen:false
         }
+        this.openAddNewTodoModal=this.openAddNewTodoModal.bind(this);
+        this.closeAddNewTodoModal=this.closeAddNewTodoModal.bind(this);
     }
 
 
- componentDidMount() {
-    var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#show-dialog');
-    showDialogButton.addEventListener('click', function() {
-      dialog.showModal();
-    });
-    dialog.querySelector('.close').addEventListener('click', function() {
-      dialog.close();
-    });
+ openAddNewTodoModal(event) {
+    this.setState({isAddNewTodoModalOpen: true});
  }
+
+
+ closeAddNewTodoModal(event) {
+  if(event.target.id === 'close-modal'){
+    this.setState({isAddNewTodoModalOpen: false});
+  }
+ }
+
 
     render() {
 
         return (
-            <div className="add-todo-button">
-                <button id="show-dialog" type="button" class="mdl-button" className="add-button"> + New </button>
-  <dialog class="mdl-dialog">
-  <span class="close">
-  X
-  </span>
-  Add new Task <br></br>
-  </dialog>
+            <div className="add-todo-button">                
+            <button type="button" className="add-button" onClick={this.openAddNewTodoModal}> + New </button>
+            <AddNewTodoModal isOpen={this.state.isAddNewTodoModalOpen} closeModal={this.closeAddNewTodoModal}/>
             </div>
         );
     }
