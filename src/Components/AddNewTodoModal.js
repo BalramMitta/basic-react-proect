@@ -16,6 +16,27 @@ class AddNewTodoModal extends Component {
                             <textarea class="mdl-textfield__input" type="text" rows= "2" id="task-notes" ></textarea>
                             <label class="mdl-textfield__label" for="task-notes">Notes...</label>
                     </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                            <select id="select-list" name="myselect" class="mdl-textfield__input">
+
+                                {this.props.lists.map(function (data, index) {
+                                    return(
+                                 <option value={index}>{data.name}</option>
+                                 );
+                             })}
+                            </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                            <select id="select-when" name="myselect" class="mdl-textfield__input">
+                                 <option value="Today">Today</option>
+                                 <option value="Tomorrow">Tomorrow</option>
+                                 <option value="Upcoming">Upcoming</option>
+                                 <option value="Sunday">Sunday</option>
+                            </select>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                         Add
+                    </button>
                </div>
             </div>
         );

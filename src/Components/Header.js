@@ -14,7 +14,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <MenuButton handleMenuBar={this.props.handleMenuBar}/>
-                <AddTodoButton></AddTodoButton>
+                <AddTodoButton lists={this.props.lists}></AddTodoButton>
             </div>
         );
     }

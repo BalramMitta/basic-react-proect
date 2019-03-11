@@ -30,7 +30,7 @@ class AddTodoButton extends Component {
         return (
             <div className="add-todo-button">                
             <button type="button" className="add-button" onClick={this.openAddNewTodoModal}> + New </button>
-            <AddNewTodoModal isOpen={this.state.isAddNewTodoModalOpen} closeModal={this.closeAddNewTodoModal}/>
+            <AddNewTodoModal isOpen={this.state.isAddNewTodoModalOpen} closeModal={this.closeAddNewTodoModal} lists={this.props.lists}/>
             </div>
         );
     }

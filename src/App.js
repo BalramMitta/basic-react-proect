@@ -71,7 +71,7 @@ class App extends Component {
         console.log(this.state.isMenuBarOpen);
         return (
             <div className="root">
-                <Header handleMenuBar={this.handleMenuBar} addNewTaskModalOpen={this.state.addNewTaskModalOpen} />
+                <Header handleMenuBar={this.handleMenuBar} addNewTaskModalOpen={this.state.addNewTaskModalOpen} lists={this.state.todoLists}/>
                 <MenuBar open={this.state.isMenuBarOpen} lists={this.state.todoLists} changeList={this.handleChangeList}/>
                 
                 <MainContent fullWidth={!this.state.isMenuBarOpen} todoList={this.state.todoLists} listIndex={this.state.displayListIndex} tasksList={this.state.todoTasks} changeListName={this.handleListName}></MainContent>
