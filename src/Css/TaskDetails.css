@@ -1,0 +1,17 @@
+.no-task{
+	font-size: 28px;
+	text-align: center;
+	margin-top: 100px;
+	font-weight: 700;
+
+}
+
+.task-title{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.task-title{
+	outline:none;
+}

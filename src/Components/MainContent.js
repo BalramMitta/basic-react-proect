@@ -8,15 +8,16 @@ class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            taskIndex: this.getFirstTaskIndex()
+            selectedTaskIndex: this.getFirstTaskIndex()
         };
         this.getFirstTaskIndex = this.getFirstTaskIndex.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleTaskClick = this.handleTaskClick.bind(this);
     }
 
     getFirstTaskIndex() {
         let tasksList = this.props.tasksList;
-        for (let i = 0; i < tasksList.size; i++) {
+        for (let i = 0; i < tasksList.length; i++) {
             if (tasksList[i].status === false) {
                 return i;
             }
@@ -30,6 +31,10 @@ class MainContent extends Component {
             event.target.blur();
         }
     }
+
+    handleTaskClick(event){
+            this.setState({selectedTaskIndex:parseInt(event.target.getAttribute("index"))});
+    }
     render() {
         let listDetails;
         let listName;
@@ -41,6 +46,9 @@ class MainContent extends Component {
             listName = "All Tasks";
         }
 
+        let taskDetails=this.props.tasksList[this.state.selectedTaskIndex];
+
+        console.log(this.state.selectedTaskIndex);
         return (
             <div className={this.props.fullWidth ? 'main-content full-width' : 'main-content'}>
                 <div className="list-name" contentEditable={this.props.listIndex < 0 ? "false" : "true"}
@@ -48,10 +56,10 @@ class MainContent extends Component {
                 <div className="h-scroll">
                     <FixedContainer>
                         <TaskList list={this.props.todoList} tasksList={this.props.tasksList}
-                                  listIndex={this.props.listIndex}/>
+                                  listIndex={this.props.listIndex} selectedTaskIndex={this.state.selectedTaskIndex} openTask={this.handleTaskClick}/>
                     </FixedContainer>
                     <FixedContainer>
-                        <TaskDetails index={this.state.taskIndex} tasksList={this.props.tasksList}/>
+                        <TaskDetails index={this.state.selectedTaskIndex} taskDetails={taskDetails} changeTaskTitle={this.props.changeTaskTitle}/>
                     </FixedContainer>
                 </div>
             </div>

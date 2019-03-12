@@ -4,7 +4,7 @@ import '../Css/TaskItem.css'
 class TaskItem extends Component {
     render() {
         return (
-            <div className='task-item'>
+            <div index={this.props.index} className={this.props.selected === true?"task-item selected":"task-item"} onClick={this.props.openTask}>
                 {this.props.data.title}
             </div>
         );

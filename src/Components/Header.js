@@ -4,17 +4,12 @@ import AddTodoButton from "./AddTodoButton.js"
 import "../Css/Header.css";
 
 class Header extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
 
-        }
-    }
     render() {
         return (
             <div className="header">
                 <MenuButton handleMenuBar={this.props.handleMenuBar}/>
-                <AddTodoButton lists={this.props.lists}></AddTodoButton>
+                <AddTodoButton openAddNewTodoModal={this.props.openAddNewTodoModal} closeAddNewTodoModal={this.props.closeAddNewTodoModal} isAddNewTodoModalOpen={this.props.isAddNewTodoModalOpen} handleAddNewTask={this.props.handleAddNewTask} lists={this.props.lists}></AddTodoButton>
             </div>
         );
     }
