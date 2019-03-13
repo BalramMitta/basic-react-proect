@@ -47,6 +47,7 @@ class App extends Component {
         this.handleListName = this.handleListName.bind(this);
         this.handleAddNewTask = this.handleAddNewTask.bind(this);
         this.handleTaskTitle = this.handleTaskTitle.bind(this);
+        this.handleChangeTaskNotes = this.handleChangeTaskNotes.bind(this);
     }
 
 
@@ -69,10 +70,6 @@ class App extends Component {
 
     handleChangeList(event){
         let index = parseInt(event.target.getAttribute("index"));
-        console.log(index);
-        if(index === -1){
-            console.log("aaa");
-        }
         this.setState({displayListIndex:index});
     }
     handleListName(event){
@@ -89,11 +86,19 @@ class App extends Component {
         this.setState({todoTasks:todoTasks});
     }
 
+    handleChangeTaskNotes(event){
+        let todoTasks = this.state.todoTasks.slice();
+        let index = event.target.getAttribute("index");
+        console.log(index);
+        todoTasks[index].notes=event.target.innerHTML;
+        this.setState({todoTasks:todoTasks});
+    }
+
     handleAddNewTask(event){
             event.preventDefault();
             const title=event.target.taskTitle.value;
             const notes=event.target.taskNotes.value;
-            const listIndex=event.target.selectList.value;
+            const listIndex=parseInt(event.target.selectList.value);
             const when=event.target.selectWhen.value;
             if(title.length !== 0){
                 let tasksList = this.state.todoTasks.slice();
@@ -122,7 +127,7 @@ class App extends Component {
                 <Header openAddNewTodoModal={this.openAddNewTodoModal} closeAddNewTodoModal={this.closeAddNewTodoModal} isAddNewTodoModalOpen={this.state.isAddNewTodoModalOpen} handleMenuBar={this.handleMenuBar} lists={this.state.todoLists} handleAddNewTask={this.handleAddNewTask} />
                 <MenuBar open={this.state.isMenuBarOpen} lists={this.state.todoLists} changeList={this.handleChangeList}/>
                 
-                <MainContent fullWidth={!this.state.isMenuBarOpen} todoList={this.state.todoLists} listIndex={this.state.displayListIndex} tasksList={this.state.todoTasks} changeListName={this.handleListName} changeTaskTitle={this.handleTaskTitle}></MainContent>
+                <MainContent changeTaskNotes={this.handleChangeTaskNotes} fullWidth={!this.state.isMenuBarOpen} todoList={this.state.todoLists} listIndex={this.state.displayListIndex} tasksList={this.state.todoTasks} changeListName={this.handleListName} changeTaskTitle={this.handleTaskTitle}></MainContent>
             </div>
         );
     }

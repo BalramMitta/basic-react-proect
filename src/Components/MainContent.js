@@ -33,7 +33,9 @@ class MainContent extends Component {
     }
 
     handleTaskClick(event){
+            if (event.target.id === "task-item") {
             this.setState({selectedTaskIndex:parseInt(event.target.getAttribute("index"))});
+        }
     }
     render() {
         let listDetails;
@@ -47,8 +49,8 @@ class MainContent extends Component {
         }
 
         let taskDetails=this.props.tasksList[this.state.selectedTaskIndex];
+        let listNameOfTask=this.props.todoList[taskDetails.listIndex].name;
 
-        console.log(this.state.selectedTaskIndex);
         return (
             <div className={this.props.fullWidth ? 'main-content full-width' : 'main-content'}>
                 <div className="list-name" contentEditable={this.props.listIndex < 0 ? "false" : "true"}
@@ -59,7 +61,7 @@ class MainContent extends Component {
                                   listIndex={this.props.listIndex} selectedTaskIndex={this.state.selectedTaskIndex} openTask={this.handleTaskClick}/>
                     </FixedContainer>
                     <FixedContainer>
-                        <TaskDetails index={this.state.selectedTaskIndex} taskDetails={taskDetails} changeTaskTitle={this.props.changeTaskTitle}/>
+                        <TaskDetails changeTaskNotes={this.props.changeTaskNotes} index={this.state.selectedTaskIndex} taskDetails={taskDetails} changeTaskTitle={this.props.changeTaskTitle} listNameOfTask={listNameOfTask}/>
                     </FixedContainer>
                 </div>
             </div>

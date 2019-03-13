@@ -6,7 +6,7 @@ class TasksBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showTasks: false
+            showTasks: true
         };
         this.handleShowTasks = this.handleShowTasks.bind(this);
     }
@@ -21,7 +21,6 @@ class TasksBar extends Component {
         let listIndex = this.props.listIndex;
         let selectedTaskIndex = this.props.selectedTaskIndex;
         let openTask = this.props.openTask;
-        let handleShowTasks = this.handleShowTasks;
         return (
             <div className='tasks-bar'>
                 <div className='tasks-time-title' onClick={this.handleShowTasks}>

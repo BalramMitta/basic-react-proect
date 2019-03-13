@@ -10,8 +10,37 @@
     font-size: 24px;
     font-weight: bold;
     padding: 20px;
+	outline:none;
 }
 
-.task-title{
-	outline:none;
+.action-buttons{
+	width: inherit;
+	height: 65px;
+	padding: 12px;
+}
+
+.sub-heading{
+	font-size:14px;
+	font-weight:100;
+	width: inherit;
+	padding: 5px;
+	margin-left: 15px;
+	margin-top: 20px;
+}
+
+.notes{
+	padding: 10px;
+	font-weight: 300px;
+	font-size: 12px;
+	width: inherit;
+	border-radius: 4px;
+	margin: 10px;
+	margin-left: 20px;
+
+	line-height: 16px;
+}
+
+.notes:focus{
+	background-color: #ddd;
+	outline: none;
 }

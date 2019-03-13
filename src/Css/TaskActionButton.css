@@ -1,0 +1,33 @@
+.task-action-button{
+	width: 28%;
+	margin: 2%;
+	height: inherit;
+	text-align: center;
+	background-color: #fff;
+	border: 0.5px solid #ddd;
+	cursor: pointer;
+	color: #555;
+	box-shadow: 2px 2px 8px 1px #ddd;
+	border-radius: 4px;
+}
+
+.task-action-button:focus{
+	outline: none;
+}
+.task-action-button:hover{
+	box-shadow: 2px 2px 8px 2px #bbb;
+}
+
+.task-action-button:active{
+	box-shadow: 1px 1px 4px 1px #bbb;
+}
+.button-icon{
+	color: #888;
+	font-size: 12px;
+	margin: 4px;
+}
+.button-text{
+	white-space: nowrap;
+	color: #555;
+	font-size: 12px;
+}
