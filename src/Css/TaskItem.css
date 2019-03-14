@@ -31,7 +31,7 @@
 
 .round label {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 50%;
   cursor: pointer;
   height: 18px;
@@ -60,8 +60,8 @@
 }
 
 .round > input[type="checkbox"]:checked + label {
-  background-color: #ccc;
-  border-color: #ccc;
+  background-color: #ddd;
+  border-color: #ddd;
 }
 
 .round > input[type="checkbox"]:checked + label:after {
@@ -74,4 +74,54 @@
     font-size: 14px;
     left: 14px;
     top: 3px;
+    line-height: 22px;
+}
+
+
+.task-item-title:focus{
+    outline: none;
+}
+
+.sub-task-input{
+    color: #ddd;
+    cursor: text;
+    display: block;
+    font-size: 18px;
+    height: 18px;
+}
+.task-done{
+    color: #aaa;
+  -webkit-transition: all 200ms; /* Safari */
+  transition: all 200ms linear;
+}
+.task-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: 1px solid #ddd;
+  background: black;
+  width: 0%;
+  margin-left: 40%;
+  transform: translateY(-50%);
+  -webkit-transition: all 200ms; /* Safari */
+  transition: all 200ms linear;
+}
+
+.task-done::before{
+  width: 85%;
+  margin-left: 2%;
+  -webkit-transition: all 200ms; /* Safari */
+  transition: all 200ms linear;
+}
+
+.task-delete{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #aaa;
+}
+
+.hide{
+  display: none;
 }

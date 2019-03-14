@@ -37,6 +37,7 @@ class MainContent extends Component {
             this.setState({selectedTaskIndex:parseInt(event.target.getAttribute("index"))});
         }
     }
+
     render() {
         let listDetails;
         let listName;
@@ -47,9 +48,19 @@ class MainContent extends Component {
             listDetails = this.props.todoList;
             listName = "All Tasks";
         }
-
-        let taskDetails=this.props.tasksList[this.state.selectedTaskIndex];
-        let listNameOfTask=this.props.todoList[taskDetails.listIndex].name;
+        
+        let taskDetails=[];
+        let listNameOfTask="";
+        let setStateTaskIndex = false;
+        if(this.getFirstTaskIndex() !== -1){
+            taskDetails=this.props.tasksList[this.state.selectedTaskIndex];
+            setStateTaskIndex = true;
+            if(taskDetails === undefined){
+                taskDetails=this.props.tasksList[this.getFirstTaskIndex()];
+                this.setStateTaskIndex = false;
+            }
+            listNameOfTask=this.props.todoList[taskDetails.listIndex].name;
+        }
 
         return (
             <div className={this.props.fullWidth ? 'main-content full-width' : 'main-content'}>
@@ -58,10 +69,10 @@ class MainContent extends Component {
                 <div className="h-scroll">
                     <FixedContainer>
                         <TaskList list={this.props.todoList} tasksList={this.props.tasksList}
-                                  listIndex={this.props.listIndex} selectedTaskIndex={this.state.selectedTaskIndex} openTask={this.handleTaskClick}/>
+                                  listIndex={this.props.listIndex} selectedTaskIndex={this.state.selectedTaskIndex} openTask={this.handleTaskClick}  handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
                     </FixedContainer>
                     <FixedContainer>
-                        <TaskDetails changeTaskNotes={this.props.changeTaskNotes} index={this.state.selectedTaskIndex} taskDetails={taskDetails} changeTaskTitle={this.props.changeTaskTitle} listNameOfTask={listNameOfTask}/>
+                        <TaskDetails handleDeleteSubTask={this.props.handleDeleteSubTask} addNewSubTask={this.props.addNewSubTask} changeTaskNotes={this.props.changeTaskNotes} index={this.setStateTaskIndex?this.state.selectedTaskIndex:this.getFirstTaskIndex()} taskDetails={taskDetails} changeTaskTitle={this.props.changeTaskTitle} listNameOfTask={listNameOfTask} handleSubTaskStatusChange={this.props.handleSubTaskStatusChange}/>
                     </FixedContainer>
                 </div>
             </div>

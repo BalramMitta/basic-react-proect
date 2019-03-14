@@ -21,6 +21,8 @@ class TasksBar extends Component {
         let listIndex = this.props.listIndex;
         let selectedTaskIndex = this.props.selectedTaskIndex;
         let openTask = this.props.openTask;
+        let handleTaskStatusChange = this.props.handleTaskStatusChange;
+        let deleteTask = this.props.handleDeleteTask;
         return (
             <div className='tasks-bar'>
                 <div className='tasks-time-title' onClick={this.handleShowTasks}>
@@ -30,7 +32,7 @@ class TasksBar extends Component {
                     {this.props.tasksList.map(function (data, index) {
                         if( ( listIndex === -1 || data.listIndex === listIndex ) && data.when === whenTitle){
                             return (
-                                <TaskItem openTask={openTask} selected={selectedTaskIndex === index?true:false} key={index} index={index} data={data}/>
+                                <TaskItem handleTaskStatusChange={handleTaskStatusChange} openTask={openTask} selected={selectedTaskIndex === index?true:false} key={index} index={index} data={data} deleteTask={deleteTask}/>
                             )
                         } else {
                             return ('');

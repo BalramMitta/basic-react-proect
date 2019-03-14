@@ -26,8 +26,11 @@ class TaskDetails extends Component {
     			);
     	}
     	else {
+            let taskIndex = this.props.index;
+            let handleTaskStatusChange = this.props.handleSubTaskStatusChange;
+            let deleteTask = this.props.handleDeleteSubTask;
         return (
-            <div className="task-details">
+            <div className={this.props.taskDetails.status === true?"low-opacity":""}>
             	<div className="task-title" index={this.props.index} contentEditable="true" onBlur={this.props.changeTaskTitle} onKeyDown={this.handleKeyDown}>
             			{this.props.taskDetails.title}
             	</div>
@@ -41,7 +44,16 @@ class TaskDetails extends Component {
             		SUB TASKS
             	</div>
             	<div className="sub-tasks">
-            		<TaskItem index={-1}/>
+            		{
+            			this.props.taskDetails.subTasks.map(function(data,index){
+            				return(
+            				<TaskItem subTask subTaskIndex={index} index={taskIndex} data={data}  handleTaskStatusChange={handleTaskStatusChange} deleteTask={deleteTask}/>
+            				)
+            			})
+            		}
+
+                    <input type="text" index={this.props.index} id="sub-task-input" placeholder="Add a new subtask" onKeyUp={this.props.addNewSubTask}/>
+
             	</div>
             	<div className="sub-heading">
             		NOTES

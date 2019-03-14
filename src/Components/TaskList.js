@@ -7,13 +7,13 @@ class TaskList extends Component {
         return (
             <div className='task-list'>
                 <TasksBar title='Today' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask}/>
+                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
                 <TasksBar title='Tomorrow' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask}/>
+                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
                 <TasksBar title='Upcoming' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask}/>
+                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
                 <TasksBar title='Someday' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask}/>
+                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
                           
             </div>
         );

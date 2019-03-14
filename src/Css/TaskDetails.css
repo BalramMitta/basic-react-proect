@@ -5,7 +5,9 @@
 	font-weight: 700;
 
 }
-
+.low-opacity{
+	opacity: 0.2;
+}
 .task-title{
     font-size: 24px;
     font-weight: bold;
@@ -27,7 +29,21 @@
 	margin-left: 15px;
 	margin-top: 20px;
 }
-
+#sub-task-input{
+	width: 330px;
+	height: 36px;
+	margin: 10px;
+	margin-left: 15px;
+	padding: 5px;
+	padding-left: 20px;
+	border: 0.5px solid #ddd;
+	border-radius: 4px;
+	background-color:#fff; 
+	font-size:16px;
+}
+#sub-task-input:focus{
+	outline: none;
+}
 .notes{
 	padding: 10px;
 	font-weight: 300px;
