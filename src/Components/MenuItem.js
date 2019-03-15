@@ -5,7 +5,11 @@ class MenuItem extends Component {
     render() {
 
         return (
-            <div className={this.props.head?"menuhead":"menuitem"} index={this.props.index} onClick={this.props.changeList}>
+            <div
+                className={this.props.head ? "menuhead" : "menuitem"}
+                index={this.props.index}
+                onClick={this.props.changeList}
+            >
                 {this.props.children}
             </div>
         );

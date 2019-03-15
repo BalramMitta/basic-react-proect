@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import '../Css/TasksBar.css'
+import React, { Component } from 'react';
 import TaskItem from './TaskItem'
+import '../Css/TasksBar.css'
 
 class TasksBar extends Component {
     constructor(props) {
@@ -12,8 +12,8 @@ class TasksBar extends Component {
     }
 
 
-    handleShowTasks(){
-        this.setState({showTasks:this.state.showTasks?false:true});
+    handleShowTasks() {
+        this.setState({ showTasks: this.state.showTasks ? false : true });
     }
 
     render() {
@@ -28,16 +28,24 @@ class TasksBar extends Component {
                 <div className='tasks-time-title' onClick={this.handleShowTasks}>
                     {this.props.title}
                 </div>
-                <div className={this.state.showTasks === true?"tasks show":"tasks hide"}>
+                <div className={this.state.showTasks === true ? "tasks show" : "tasks hide"}>
                     {this.props.tasksList.map(function (data, index) {
-                        if( ( listIndex === -1 || data.listIndex === listIndex ) && data.when === whenTitle){
+                        if ((listIndex === -1 || data.listIndex === listIndex) && data.when === whenTitle) {
                             return (
-                                <TaskItem handleTaskStatusChange={handleTaskStatusChange} openTask={openTask} selected={selectedTaskIndex === index?true:false} key={index} index={index} data={data} deleteTask={deleteTask}/>
+                                <TaskItem 
+                                    handleTaskStatusChange={handleTaskStatusChange} 
+                                    openTask={openTask} 
+                                    selected={selectedTaskIndex === index ? true : false} 
+                                    key={index} 
+                                    index={index} 
+                                    data={data} 
+                                    deleteTask={deleteTask} 
+                                />
                             )
                         } else {
                             return ('');
                         }
-                        }
+                    }
                     )}
                 </div>
             </div>

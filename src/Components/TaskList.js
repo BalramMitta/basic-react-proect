@@ -1,20 +1,29 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import TasksBar from './TasksBar'
 import '../Css/TaskList.css'
 
 class TaskList extends Component {
     render() {
+        let component = this;
         return (
             <div className='task-list'>
-                <TasksBar title='Today' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
-                <TasksBar title='Tomorrow' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
-                <TasksBar title='Upcoming' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
-                <TasksBar title='Someday' list={this.props.list} tasksList={this.props.tasksList}
-                          listIndex={this.props.listIndex} selectedTaskIndex={this.props.selectedTaskIndex} openTask={this.props.openTask} handleTaskStatusChange={this.props.handleTaskStatusChange} handleDeleteTask={this.props.handleDeleteTask}/>
-                          
+                {
+                    ['Today', 'Tomorrow', 'Upcoming', 'Someday'].map(function (title, i) {
+                        return (
+                            <TasksBar
+                                title={title}
+                                list={component.props.list}
+                                tasksList={component.props.tasksList}
+                                listIndex={component.props.listIndex}
+                                selectedTaskIndex={component.props.selectedTaskIndex}
+                                openTask={component.props.openTask}
+                                handleTaskStatusChange={component.props.handleTaskStatusChange}
+                                handleDeleteTask={component.props.handleDeleteTask}
+                            />
+                        );
+                    })
+                }
+
             </div>
         );
     }

@@ -135,14 +135,19 @@ class App extends Component {
     handleDeleteTask(event){
         let todoTasks = this.state.todoTasks.slice();
         let index = event.target.getAttribute("index");
-        todoTasks.splice(index,1);
-        this.setState({todoTasks:todoTasks});
+        // todoTasks.splice(index,1);
+        delete todoTasks[index];
+        this.setState({
+            todoTasks:todoTasks,
+            deletedTaskIndex:index
+        });
     }
 
     handleAddNewSubTask(event){
         if(event.keyCode === 13){
              let todoTasks = this.state.todoTasks.slice();
              let index = event.target.getAttribute("index");
+            console.log(index);
              todoTasks[index].subTasks.push({
                     title:event.target.value,
                     status:false
@@ -174,7 +179,21 @@ class App extends Component {
                 <Header openAddNewTodoModal={this.openAddNewTodoModal} closeAddNewTodoModal={this.closeAddNewTodoModal} isAddNewTodoModalOpen={this.state.isAddNewTodoModalOpen} handleMenuBar={this.handleMenuBar} lists={this.state.todoLists} handleAddNewTask={this.handleAddNewTask} />
                 <MenuBar open={this.state.isMenuBarOpen} lists={this.state.todoLists} changeList={this.handleChangeList}/>
                 
-                <MainContent changeTaskNotes={this.handleChangeTaskNotes} fullWidth={!this.state.isMenuBarOpen} todoList={this.state.todoLists} listIndex={this.state.displayListIndex} tasksList={this.state.todoTasks} changeListName={this.handleListName} changeTaskTitle={this.handleTaskTitle}  handleTaskStatusChange={this.handleTaskStatusChange} addNewSubTask={this.handleAddNewSubTask} handleSubTaskStatusChange={this.handleSubTaskStatusChange} handleDeleteTask={this.handleDeleteTask} handleDeleteSubTask={this.handleDeleteSubTask}></MainContent>
+                <MainContent 
+                    changeTaskNotes={this.handleChangeTaskNotes} 
+                    fullWidth={!this.state.isMenuBarOpen} 
+                    todoList={this.state.todoLists} 
+                    listIndex={this.state.displayListIndex} 
+                    tasksList={this.state.todoTasks} 
+                    changeListName={this.handleListName} 
+                    changeTaskTitle={this.handleTaskTitle}  
+                    handleTaskStatusChange={this.handleTaskStatusChange} 
+                    addNewSubTask={this.handleAddNewSubTask} 
+                    handleSubTaskStatusChange={this.handleSubTaskStatusChange} 
+                    handleDeleteTask={this.handleDeleteTask} 
+                    handleDeleteSubTask={this.handleDeleteSubTask}
+                    deletedTaskIndex={this.state.deletedTaskIndex}
+                    />
             </div>
         );
     }

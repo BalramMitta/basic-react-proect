@@ -1,8 +1,6 @@
 .tasks-bar{
     width: inherit;
     position: relative;
-    -webkit-transition: height 300ms; /* Safari */
-    transition: height 300ms linear;
 }
 .tasks-time-title{
     width: inherit;
@@ -16,11 +14,11 @@
     position: relative;
     overflow-y: hidden;
     width: inherit;
+    -webkit-transition: max-height 300ms; /* Safari */
+    transition: max-height 300ms linear;
 }
 .show{
     max-height:300px;
-    -webkit-transition: max-height 300ms; /* Safari */
-    transition: max-height 300ms linear;
 }
 .hide{
     max-height: 0;

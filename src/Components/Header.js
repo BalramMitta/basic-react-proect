@@ -8,8 +8,14 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <MenuButton handleMenuBar={this.props.handleMenuBar}/>
-                <AddTodoButton openAddNewTodoModal={this.props.openAddNewTodoModal} closeAddNewTodoModal={this.props.closeAddNewTodoModal} isAddNewTodoModalOpen={this.props.isAddNewTodoModalOpen} handleAddNewTask={this.props.handleAddNewTask} lists={this.props.lists}></AddTodoButton>
+                <MenuButton handleMenuBar={this.props.handleMenuBar} />
+                <AddTodoButton
+                    openAddNewTodoModal={this.props.openAddNewTodoModal}
+                    closeAddNewTodoModal={this.props.closeAddNewTodoModal}
+                    isAddNewTodoModalOpen={this.props.isAddNewTodoModalOpen}
+                    handleAddNewTask={this.props.handleAddNewTask}
+                    lists={this.props.lists}
+                />
             </div>
         );
     }

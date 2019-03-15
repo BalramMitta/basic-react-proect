@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import "../Css/MenuButton.css"
 import {
     IconButton
-} from "react-mdl"
+} from "react-mdl";
+import "../Css/MenuButton.css"
 
 class MenuButton extends Component {
     render() {
         return (
             <div className="menu">
-                <IconButton name="menu" className="menu-button" onClick={this.props.handleMenuBar}/>
+                <IconButton
+                    name="menu"
+                    className="menu-button"
+                    onClick={this.props.handleMenuBar}
+                />
             </div>
         );
     }
